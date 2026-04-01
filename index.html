@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huy Cao | Marketing Executive Portfolio</title>
+  <meta name="description" content="Marketing Executive (Content & Social Media) portfolio of Huy Cao." />
+  <style>
+    :root {
+      --primary: #355FA3;
+      --primary-dark: #294a80;
+      --bg: #f5f8fc;
+      --surface: #ffffff;
+      --text: #162033;
+      --muted: #61708c;
+      --line: #dbe4f2;
+      --shadow: 0 16px 40px rgba(35, 56, 94, 0.10);
+      --radius: 22px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--text); background: linear-gradient(180deg, #eef4fb 0%, #f8fbff 30%, #f7f9fc 100%); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: rgba(245,248,252,.84); border-bottom: 1px solid rgba(219,228,242,.8); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .brand-mark { width: 40px; height: 40px; border-radius: 14px; background: linear-gradient(135deg, var(--primary), #6a8dd1); color: #fff; display: grid; place-items: center; font-weight: 800; box-shadow: var(--shadow); }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+    .section { padding: 72px 0; }
+    .hero { padding: 56px 0 30px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .hero-copy { padding: 42px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(53,95,163,.1); color: var(--primary); font-weight: 600; font-size: 13px; margin-bottom: 18px; }
+    h1, h2, h3 { margin: 0 0 14px; line-height: 1.15; }
+    h1 { font-size: clamp(34px, 5vw, 58px); letter-spacing: -0.03em; }
+    h2 { font-size: clamp(26px, 4vw, 38px); letter-spacing: -0.03em; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 720px; }
+    .cta-row { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 18px; border-radius: 14px; font-weight: 700; border: 1px solid transparent; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-secondary { background: #f4f7fb; color: var(--text); border-color: var(--line); }
+    .hero-side { display: flex; flex-direction: column; gap: 18px; }
+    .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .metric { padding: 24px; }
+    .metric .value { font-size: 30px; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+    .metric .label { font-size: 14px; color: var(--muted); }
+    .panel { padding: 26px; }
+    .panel p { margin: 0; color: var(--muted); }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 28px; }
+    .section-head p { color: var(--muted); max-width: 720px; margin: 0; }
+    .about-grid, .skills-grid, .projects-grid, .case-grid, .gallery-grid { display: grid; gap: 22px; }
+    .about-grid { grid-template-columns: 1fr 1fr; }
+    .list { margin: 0; padding-left: 18px; color: var(--muted); }
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item { position: relative; padding: 26px 24px 24px 26px; }
+    .timeline-item::before { content: ""; position: absolute; left: 0; top: 24px; bottom: 24px; width: 5px; border-radius: 999px; background: linear-gradient(180deg, var(--primary), #7ba1ec); }
+    .timeline-meta { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+    .result-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .badge { padding: 8px 12px; border-radius: 999px; background: #eef4ff; color: var(--primary-dark); font-size: 13px; font-weight: 700; }
+    .case-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-body { padding: 22px; }
+    .star { display: grid; gap: 12px; }
+    .star-item strong { display: block; color: var(--primary-dark); margin-bottom: 4px; }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .sample-title { font-size: 19px; margin-bottom: 10px; }
+    .sample-copy { color: var(--muted); font-size: 15px; }
+    .sample-copy blockquote { margin: 14px 0 0; padding: 16px 18px; border-left: 4px solid var(--primary); background: #f6f9ff; border-radius: 0 14px 14px 0; color: var(--text); }
+    .video-wrap { position: relative; padding-top: 177.77%; background: #0f1626; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+    .skill-card { padding: 24px; }
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+    .gallery-grid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); }
+    .contact-card { padding: 34px; text-align: center; }
+    .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    .footer { padding: 26px 0 40px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 960px) { .hero-grid, .about-grid, .projects-grid, .case-grid, .skills-grid, .gallery-grid { grid-template-columns: 1fr; } .metric-grid { grid-template-columns: 1fr 1fr; } .hero-copy { padding: 30px; } }
+    @media (max-width: 620px) { .nav-inner { align-items: flex-start; flex-direction: column; } .metric-grid { grid-template-columns: 1fr; } .section { padding: 56px 0; } .hero { padding-top: 32px; } h1 { font-size: 34px; } .lead { font-size: 16px; } .hero-copy, .panel, .metric, .timeline-item, .skill-card, .contact-card { padding: 22px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><div class="brand-mark">HC</div><div>Huy Cao</div></div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#campaigns">Campaigns</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#projects">Content Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero section">
+    <div class="container hero-grid">
+      <div class="card hero-copy">
+        <div class="eyebrow">Marketing Executive · Content & Social Media</div>
+        <h1>I create content that helps brands stay visible, relatable, and commercially relevant.</h1>
+        <p class="lead">Nearly 1 year of hands-on experience across social media, short-form video, SEO content, and page management for F&amp;B, lifestyle, and experiential brands. I focus on content systems that connect brand image with real audience behavior.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#contact">Contact Me</a><a class="btn btn-secondary" href="mailto:huycao.marketer@gmail.com">huycao.marketer@gmail.com</a></div>
+      </div>
+      <div class="hero-side">
+        <div class="metric-grid">
+          <div class="card metric"><div class="value">30+</div><div class="label">Content pieces produced monthly</div></div>
+          <div class="card metric"><div class="value">32.7K+</div><div class="label">Views on a single short-form video</div></div>
+          <div class="card metric"><div class="value">1.3K+</div><div class="label">TikTok followers managed and grown</div></div>
+          <div class="card metric"><div class="value">10K–22K</div><div class="label">Page size handled across brands and locations</div></div>
+        </div>
+        <div class="card panel"><p><strong>Positioning:</strong> Not a fresher portfolio. This site presents a Marketing Executive profile with real operating experience across content planning, page management, social execution, and performance-oriented storytelling.</p></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head"><div><h2>About</h2><p>I am a Marketing graduate with nearly one year of hands-on experience in content creation, social media management, and short-form video production. My background combines academic research, marketing competitions, and real-world execution, helping me build a strong foundation in both strategic thinking and practical content work.</p></div></div>
+      <div class="about-grid">
+        <div class="card panel"><h3>What I do best</h3><ul class="list"><li>Develop content angles based on audience psychology and platform behavior</li><li>Translate brand spaces into stories, hooks, and social-friendly narratives</li><li>Build realistic content plans for pages that need consistency, not vanity posting</li><li>Coordinate writing, visual direction, and short-form execution</li></ul></div>
+        <div class="card panel"><h3>Current focus</h3><ul class="list"><li>Content Marketing for hospitality, lifestyle, F&amp;B, and destination brands</li><li>Social Media content systems for Facebook, TikTok, and short-form formats</li><li>Campaign thinking with clear commercial support, not content for content’s sake</li><li>English-first professional presentation with Vietnamese sample execution</li></ul></div>
+      </div>
+      <div class="card panel" style="margin-top:22px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;"><div><h3 style="margin-bottom:8px;">More About Me</h3><p style="margin:0;color:var(--muted);">Read a fuller profile with my background, university journey, Euréka 2025 milestone, and supporting visuals.</p></div><a class="btn btn-primary" href="about-huy.html">Read full story</a></div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-head"><div><h2>Work Experience</h2><p>A timeline of internships and hands-on execution from June 2024 to present, focused on measurable outcomes in social media, content, and campaign performance.</p></div></div>
+      <div class="timeline">
+        <div class="card timeline-item"><div class="timeline-meta"><span><strong>Landscape Association / Family Garden</strong> · Marketing Executive</span><span>Mar 2026 – Present</span></div><p>Managing content and page operations for hospitality, event, and destination-related brands including urban lifestyle spaces and eco-tourism pages. Responsible for content planning, social publishing, messaging direction, and content optimization based on audience behavior.</p><div class="result-badges"><span class="badge">Managed pages in the 10K–22K range</span><span class="badge">Produced 30+ content assets/month</span><span class="badge">Built practical content systems for Facebook & TikTok</span></div></div>
+        <div class="card timeline-item"><div class="timeline-meta"><span><strong>Dat Hop Co., Ltd</strong> · Marketing Executive Intern</span><span>Mar 2025 – May 2025</span></div><p>Created SEO-friendly website articles and social media content for UAV and biotech products, balancing technical clarity with audience accessibility.</p><div class="result-badges"><span class="badge">+14.3% keyword CTR</span><span class="badge">+12% Facebook engagement in 2 months</span><span class="badge">Applied AISAS model in messaging</span></div></div>
+        <div class="card timeline-item"><div class="timeline-meta"><span><strong>Real Bean Coffee Co., Ltd</strong> · Marketing Executive Intern</span><span>Jun 2024 – Aug 2024</span></div><p>Managed TikTok Shop campaigns and short-form product videos, working closely with the creative team to improve click-through and content efficiency.</p><div class="result-badges"><span class="badge">+66.6% product views</span><span class="badge">+114.3% product clicks</span><span class="badge">+100.7% CTR above target</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="campaigns">
+    <div class="container">
+      <div class="section-head"><div><h2>Brand Activation Projects</h2><p>Selected campaign and event support work showing my ability to handle content around real brand moments, venue communication, and on-site social storytelling.</p></div></div>
+      <div class="card panel">
+        <h3>Huawei Band 11 Series Workshop · Family Garden – 28 Thảo Điền</h3>
+        <p style="margin-bottom:14px;">Supported communication content and event-related storytelling for a Huawei workshop hosted at Family Garden, a page with approximately 22K followers. This project reflects my ability to connect venue branding, social visibility, and real event moments into professional content that feels credible for both audiences and brand partners.</p>
+        <div class="result-badges"><span class="badge">Brand collaboration environment</span><span class="badge">22K follower page context</span><span class="badge">On-site content support</span><span class="badge">Hospitality + event marketing</span></div>
+        <div class="gallery-grid" style="margin-top:18px; margin-bottom:24px;">
+          <img src="assets/huawei-1.jpg" alt="Huawei event at Family Garden 1" />
+          <img src="assets/huawei-2.jpg" alt="Huawei event at Family Garden 2" />
+          <img src="assets/huawei-3.jpg" alt="Huawei event at Family Garden 3" />
+          <img src="assets/huawei-4.jpg" alt="Huawei event at Family Garden 4" />
+        </div>
+        <h3>Vivo Smartphone Training Workshop · Family Garden – 28 Thảo Điền</h3>
+        <p style="margin-bottom:14px;">Supported communication visuals and on-site event storytelling for a Vivo smartphone training workshop hosted at Family Garden. This project demonstrates my ability to work with brand-led activation formats, support the image of a professional venue, and present event moments in a polished and socially usable way.</p>
+        <div class="result-badges"><span class="badge">Training event support</span><span class="badge">Brand activation environment</span><span class="badge">On-site visual coverage</span><span class="badge">Venue communication support</span></div>
+        <div class="gallery-grid" style="margin-top:18px;">
+          <img src="assets/vivo-1.jpg" alt="vivo event at Family Garden 1" />
+          <img src="assets/vivo-2.jpg" alt="vivo event at Family Garden 2" />
+          <img src="assets/vivo-3.jpg" alt="vivo event at Family Garden 3" />
+          <img src="assets/vivo-4.jpg" alt="vivo event at Family Garden 4" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cases">
+    <div class="container">
+      <div class="section-head"><div><h2>Case Studies</h2><p>Selected examples converted into STAR format to show how content decisions were shaped by context, constraints, and measurable objectives.</p></div></div>
+      <div class="case-grid">
+        <article class="card"><div style="padding:22px;background:linear-gradient(180deg,#f1f6ff,#ffffff);border-bottom:1px solid var(--line);"><div style="font-size:14px;color:var(--primary-dark);font-weight:700;margin-bottom:8px;">Content Positioning Example</div><div style="font-size:28px;font-weight:800;line-height:1.15;color:var(--text);">Turning a destination page from “just beautiful” into “worth visiting.”</div></div><div class="case-body"><h3>Case Study 01 · Destination Content Positioning</h3><div class="star"><div class="star-item"><strong>Situation</strong> A nature-focused destination page near Nha Trang needed stronger short-form content that could stop viewers quickly while staying true to the location’s real experience.</div><div class="star-item"><strong>Task</strong> Reframe generic “beautiful location” messaging into a stronger audience-driven hook that sells emotional escape, not just scenery.</div><div class="star-item"><strong>Action</strong> Shifted the message from descriptive visual language to a more psychological angle: “a place to disappear from the city for a while,” then paired it with clear value framing and more practical CTA language.</div><div class="star-item"><strong>Result</strong> Helped build a more differentiated content direction centered on reset, escape, and mood change — a stronger foundation for future travel-education style content.</div></div></div></article>
+        <article class="card"><div class="case-body"><h3>Case Study 02 · Hospitality Content Optimization</h3><div class="star"><div class="star-item"><strong>Situation</strong> A venue page with mixed offerings required more disciplined content execution while operations were under pressure and customer expectations were sensitive.</div><div class="star-item"><strong>Task</strong> Keep brand visibility alive without overpromising what the in-person experience could not consistently support.</div><div class="star-item"><strong>Action</strong> Recommended content that stays realistic, avoids inflated claims, and focuses on atmosphere, use-case, and what is genuinely still strong in the venue ecosystem.</div><div class="star-item"><strong>Result</strong> Created a safer content direction that protects brand trust while preserving page activity and reducing the risk of audience disappointment caused by over-marketing.</div></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head"><div><h2>Content Projects</h2><p>Real execution examples showing how Vietnamese-facing content can be packaged with clear positioning, strong hooks, and English explanation for recruiters or clients.</p></div></div>
+      <div class="projects-grid">
+        <article class="card panel"><div class="sample-title">TikTok / Reel Sample · Nature &amp; Escape Angle</div><div class="video-wrap"><iframe src="https://www.tiktok.com/embed/v2/7582039742645161223" title="TikTok content example" loading="lazy" allowfullscreen></iframe></div><div class="sample-copy"><blockquote>Ít ai nghĩ gần Nha Trang lại có một nơi chill tới vậy.</blockquote><p><strong>English note:</strong> This hook uses curiosity and emotional contrast. Instead of only saying the place is beautiful, it positions the location as an unexpected escape close to the city.</p></div></article>
+        <article class="card panel"><div class="sample-title">TikTok / Reel Sample · Value-Led Travel Content</div><div class="video-wrap"><iframe src="https://www.tiktok.com/embed/v2/7622151193602575617" title="TikTok content example 2" loading="lazy" allowfullscreen></iframe></div><div class="sample-copy"><blockquote>Đi “trốn phố” 2 ngày 1 đêm tại Cà Phê Bar Rừng – Làng Nhỏ chỉ từ 1.200.000đ/căn cho 2 người lớn và 2 trẻ em dưới 12 tuổi.</blockquote><p><strong>English note:</strong> This content format combines offer clarity with emotional positioning. It highlights pricing, audience fit, and experience value in one concise story-driven message.</p></div></article>
+        <article class="card panel"><div class="sample-title">TikTok Viral Content · 32.7K Views</div><div class="video-wrap"><iframe src="https://www.tiktok.com/embed/v2/7589204899112553746" title="TikTok viral content" loading="lazy" allowfullscreen></iframe></div><div class="sample-copy"><blockquote>This video reached 32.7K views by combining a high-curiosity opening, destination-driven storytelling, and a strong emotional promise that fits the audience’s need for escape and discovery.</blockquote><p><strong>English note:</strong> This project represents my ability to create short-form content that does not only look good, but also performs well by matching audience psychology with a scroll-stopping hook.</p></div></article>
+        <article class="card panel"><div class="sample-title">TikTok / Reel Sample · Social Hook for Destination Pages</div><div class="video-wrap"><iframe src="https://www.tiktok.com/embed/v2/7595040255946804487" title="TikTok content example 4" loading="lazy" allowfullscreen></iframe></div><div class="sample-copy"><blockquote>This sample shows how I use short, audience-first phrasing to make destination content feel more clickable, relatable, and easier to remember on social media.</blockquote><p><strong>English note:</strong> The focus here is not only visual presentation, but also how wording and framing help a page gain stronger stopping power in a crowded feed.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container"><div class="section-head"><div><h2>Skills</h2><p>A practical mix of content strategy, social execution, and production support — shaped for brand pages, short-form content, and commercially relevant storytelling.</p></div></div><div class="skills-grid"><div class="card skill-card"><h3>Content & Strategy</h3><p>Content planning, brand storytelling, hook development, content pillars, caption writing, campaign messaging, audience insight.</p></div><div class="card skill-card"><h3>Platforms & Tools</h3><p>Meta Business Suite, TikTok Shop, Canva, CapCut, Adobe Photoshop, Microsoft Office, SEO content workflow.</p></div><div class="card skill-card"><h3>Execution Strengths</h3><p>Short-form direction, page management, content scheduling, trend research, cross-functional coordination, performance-aware writing.</p></div></div></div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container"><div class="card contact-card"><h2>Let’s Work Together</h2><p>I’m available for Marketing Executive opportunities, freelance content projects, and social media collaboration in English or Vietnamese.</p><div class="contact-links"><a class="btn btn-primary" href="mailto:huycao.marketer@gmail.com">Email Me</a><a class="btn btn-secondary" href="tel:0373390083">0373 390 083</a><a class="btn btn-secondary" href="https://linkedin.com/in/huy-cao-gia" target="_blank" rel="noreferrer">LinkedIn</a></div></div></div>
+  </section>
+
+  <div class="footer"><div class="container">Built for Huy Cao · Marketing Executive (Content & Social Media)</div></div>
+</body>
+</html>
